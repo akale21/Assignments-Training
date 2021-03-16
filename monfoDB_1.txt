@@ -1,0 +1,66 @@
+Q1 Insert the following documents into a movies collection?
+A.
+db.movies.insertMany(
+[{"title":"Flight Club",
+ "writer":"Chuck Palahniuko",
+ year:1999,
+ "actors":['Brad Pitt','Edward Norton']},
+
+{"title":"Pulp Fiction",
+ "writer":"Quentin Tarantino",
+ year:1994,
+ "actors":['John Travolta','Uma thurman']},
+
+{"title":"Inglorious Basterds",
+ "writer":"Quentin Tarantino",
+ year:2009,
+ "actors":['Brad pitt',Diane Kruger',Eli Roth']},
+
+{"title":"The Hobbit: An Unexpected journey",
+ "writer":"J.R.R Tolkein",
+  year:2012,
+ "Franchise":"The Hobbit"},
+
+{"title":"The Hobbit: The Desolation of Smaug",
+ "writer":"J.R.R Tolkein",
+ year:2013,
+ "franchise":"The Hobbit"},
+
+{"title":"The Hobbit:The Battle of the Five Armies",
+ "writer":"J.R.R Tolkein",
+ year:2012,
+ "Franchise":"The Hobbit",
+ "synopsis":"Bilbo and Company are foreced to engage
+in a war against an array of combatants and kepp the 
+lonely mountain from falling into the hands of a 
+raising darkness."},
+ 
+{"title":"Pee Wee Herman's Big Adventure"},
+
+{"title":"Avatar"}]
+
+Q2. query the movies collection to
+
+2.1 get all douments?
+A. 
+db.movies.find()
+
+2.2A  db.movies.find({"by":"Quentin Tarantino"}).pretty()
+
+2.3A  db.movies.find({"actors":"Brad Pitt"}).pretty()
+
+2.4A db.movies.find({"by":"The Hobbit"}).pretty()
+ 2.5A db.mycol.find({year:{$lt:2000}}).pretty()
+
+2.6A db.mycol.find({$or:[{year:2000},{year: 2010}]}).pretty()
+
+3.1A db.mycol.update({"title":"The Hobbit: An Unexpected journey"},
+{$set:{'synopsis':'A reluctant hobbit, Bilbo baggins, sets out to the lonely mountain
+with a spirited group of dwarves to reclaim their mountain home - and the golld with in
+it - from the dragon smaug'}})
+
+3.2A db.mycol.update({"title":"The Hobbit: The Desolation of Smaug"},
+{$set:{'synopsis':'The dwarves, along with Bilbo baggins and
+Gandalf the Grey, continue their quest to reclaim Erebor,
+their homeland, from smaug. Bilbo Baggins is in possession
+of a mysterious and magical ring.'}}) 
